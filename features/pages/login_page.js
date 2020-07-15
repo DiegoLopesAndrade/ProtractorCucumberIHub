@@ -6,7 +6,7 @@ var LoginPage = function () {
   };
 
   this.accessLoginPage = function () {
-    element(by.css('.choice:nth-child(2) > .icon')).click();
+    element(by.css('.choice:nth-child(2) > .icon')).click1();
   };
 
   this.enterUsername = function (username) {

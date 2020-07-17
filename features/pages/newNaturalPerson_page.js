@@ -1,4 +1,3 @@
-/*
 var NaturalPersonEntity = function () {
 
     this.get = function () {
@@ -6,7 +5,11 @@ var NaturalPersonEntity = function () {
     };
 
     this.createNewNaturalPerson = function () {
-        element(by.css('.on-right.btn-blue-surf > span')).click();
+        browser.getAllWindowHandles().then(handles => {
+            browser.switchTo().window(handles[element(by.className('btn btn-colored btn-blue-surf on-right'))]).click();
+        });
+        //browser.switchTo().window(element(by.className('btn btn-colored btn-blue-surf on-right')).click());
+        //  element(by.css('.btn-blue-surf > span')).click();
     };
 
     this.selectingNaturalPerson = function () {
@@ -14,11 +17,15 @@ var NaturalPersonEntity = function () {
     };
 
     this.selectingClientType = function () {
-        element(by.css('.row:nth-child(3) .with-icon-left')).sendKeys();
+        element(by.css('.choice:nth-child(1) > .icon')).click();
     };
 
     this.clickingOnNextButton = function () {
         element(by.className('div.action-buttons > .right > .btn')).click();
+    };
+
+    this.selectingPersonGender = function () {
+        element(by.css('css=.checkbox-radio:nth-child(3) > label')).click();
     };
 
     this.fillingUpPersonalDataForm = function () {
@@ -32,12 +39,12 @@ var NaturalPersonEntity = function () {
         element(by.css('form[ng2filedrop] > div:nth-of-type(4) > app-form-matrix-field:nth-of-type(1) select:nth-of-type(1)')).sendKeys();
     };
 
-    this.fillingUpResidenceAddress = function (username) {
-        element(by.css('form[ng2filedrop] > div:nth-of-type(7) > app-form-matrix-field:nth-of-type(1) input:nth-of-type(1)')).sendKeys(username);
-        element(by.css('form[ng2filedrop] > div:nth-of-type(7) > app-form-matrix-field:nth-of-type(4) input:nth-of-type(1)')).sendKeys(username);
-        element(by.css('form[ng2filedrop] > div:nth-of-type(7) > app-form-matrix-field:nth-of-type(5) input:nth-of-type(1)')).sendKeys(username);
-        element(by.css('form[ng2filedrop] app-form-matrix-field:nth-of-type(8) input:nth-of-type(1)')).sendKeys(username);
-        element(by.css('form[ng2filedrop] > div:nth-of-type(7) select:nth-of-type(1)')).sendKeys(username);
+    this.fillingUpResidenceAddress = function () {
+        element(by.css('form[ng2filedrop] > div:nth-of-type(7) > app-form-matrix-field:nth-of-type(1) input:nth-of-type(1)')).sendKeys();
+        element(by.css('form[ng2filedrop] > div:nth-of-type(7) > app-form-matrix-field:nth-of-type(4) input:nth-of-type(1)')).sendKeys();
+        element(by.css('form[ng2filedrop] > div:nth-of-type(7) > app-form-matrix-field:nth-of-type(5) input:nth-of-type(1)')).sendKeys();
+        element(by.css('form[ng2filedrop] app-form-matrix-field:nth-of-type(8) input:nth-of-type(1)')).sendKeys();
+        element(by.css('form[ng2filedrop] > div:nth-of-type(7) select:nth-of-type(1)')).sendKeys();
     };
 
     this.fillingUpOccupation = function () {
@@ -49,7 +56,17 @@ var NaturalPersonEntity = function () {
         element(by.css('.row:nth-child(3) .with-icon-left')).sendKeys();
     };
 
+    this.clickSaveEntity = function () {
+        element(by.css('.row:nth-child(3) .with-icon-left')).sendKeys();
+    };
+
+    this.createWithIncompleteInformation = function () {
+        element(by.css('.row:nth-child(3) .with-icon-left')).sendKeys();
+    };
+
+    this.validateSuccessMessage = function () {
+        element(by.css('.row:nth-child(3) .with-icon-left')).sendKeys();
+    };
 };
 
-module.exports = NaturalPersonEntity;
-*/
+module.exports = LoginPage;

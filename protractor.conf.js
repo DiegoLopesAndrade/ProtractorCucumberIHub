@@ -12,7 +12,8 @@ exports.config = {
   },
 
   specs: [
-    'features/*.feature'
+    'features/loginTSTenvironment.feature'
+    //'features/createNaturalPersonEntity.feature'
   ],
   cucumberOpts: {
     require: 'features/steps/*_steps.js',

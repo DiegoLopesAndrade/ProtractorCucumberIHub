@@ -1,5 +1,3 @@
-/*
-
 const { browser } = require('protractor');
 
 var chai = require('chai').use(require('chai-as-promised'));
@@ -19,69 +17,55 @@ var newNaturalPersonSteps = function () {
   });
 
   this.When('I click on the button "+" to create a new Natural Person Entity', function () {
-    this.page.accessLoginPage();
+    this.page.createNewNaturalPerson();
     browser.sleep(2000);
   });
 
-  this.When('I select Natural Person option', function (username, callback) {
-    this.page.enterUsername(username);
-    callback();
+  this.When('I select Natural Person option', function () {
+    this.page.selectingNaturalPerson();
+    browser.sleep(2000);
   });
 
-  this.When('I select a type of the Client', function (password, callback) {
-    this.page.enterPassword(password);
+  this.When('I select a type of the Client', function () {
+    this.page.selectingClientType();
     browser.sleep(2000);
-    callback();
   });
 
   this.When('I click on Next button', function () {
-    this.page.accessLoginPage();
-    browser.sleep(2000);
+    this.page.clickingOnNextButton();
   });
 
-  this.When('I select the <gender> of the client on the "Personal data" grid', function (username, callback) {
-    this.page.enterUsername(username);
-    callback();
+  this.When('I select the <gender> of the client on the "Personal data" grid', function () {
+    this.page.selectingPersonGender();
   });
 
-  this.When('I fill the information for the "Personal data"', function (password, callback) {
-    this.page.enterPassword(password);
-    browser.sleep(2000);
-    callback();
+  this.When('I fill the information for the "Personal data"', function () {
+    this.page.fillingUpPersonalDataForm();
   });
 
   this.When('I fill the information for the "Residence address"', function () {
-    this.page.accessLoginPage();
-    browser.sleep(2000);
+    this.page.fillingUpResidenceAddress();
   });
 
-  this.When('I fill the information for the "Occupation"', function (username, callback) {
-    this.page.enterUsername(username);
-    callback();
+  this.When('I fill the information for the "Occupation"', function () {
+    this.page.fillingUpOccupation();
   });
 
-  this.When('I fill the information for the "Insider Information"', function (password, callback) {
-    this.page.enterPassword(password);
-    browser.sleep(2000);
-    callback();
+  this.When('I fill the information for the "Insider Information"', function () {
+    this.page.fillingUpInsiderInformation();
   });
 
-  this.When('I click on "Save" button', function (username, callback) {
-    this.page.enterUsername(username);
-    callback();
+  this.When('I click on "Save" button', function () {
+    this.page.clickSaveEntity();
   });
 
-  this.When('I click on "Create with incomplete information" button', function (password, callback) {
-    this.page.enterPassword(password);
-    browser.sleep(2000);
-    callback();
+  this.When('I click on "Create with incomplete information" button', function () {
+    this.page.createWithIncompleteInformation();
   });
 
   this.Then('The new Natural Person entity is created displaying the success message', function () {
-    this.page.clickLogIn();
-    browser.sleep(2000);
+    this.page.validateSuccessMessage();
   });
 };
 
-module.exports = newNaturalPersonSteps;
-*/
+module.exports = LoginSteps;

@@ -1,3 +1,4 @@
+/*
 const { browser } = require('protractor');
 
 var chai = require('chai').use(require('chai-as-promised'));
@@ -69,3 +70,4 @@ var newNaturalPersonSteps = function () {
 };
 
 module.exports = LoginSteps;
+*/

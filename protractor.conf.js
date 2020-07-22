@@ -12,7 +12,7 @@ exports.config = {
   },
 
   specs: [
-    'features/loginTSTenvironment.feature'
+    'features/*.feature'
     //'features/createNaturalPersonEntity.feature'
   ],
   cucumberOpts: {

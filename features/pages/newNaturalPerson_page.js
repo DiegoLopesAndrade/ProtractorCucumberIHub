@@ -1,3 +1,4 @@
+/*
 var NaturalPersonEntity = function () {
 
     this.get = function () {
@@ -70,3 +71,4 @@ var NaturalPersonEntity = function () {
 };
 
 module.exports = LoginPage;
+*/
